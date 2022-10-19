@@ -1,0 +1,36 @@
+def pow(X, N):
+    if(N == 0):
+        return 1
+    if(X == 0):
+        return 0
+    if (N % 2 == 0):
+        return pow(X,N//2) * pow(X,N//2)
+    else:
+        return X * pow(X,N//2) * pow(X,N//2)
+        
+        
+  Time complexity :- O(log(n))
+  Space complexity :- O(log(n))  
+  
+  Approach -2
+  
+  '''
+    Time Complexity: O(N)
+    Space Complexity: O(N)
+
+    Where 'N' is the given number.
+'''
+
+def pow(X, N):
+	
+	# Base Case X ^ 0 = 1
+	if(N == 0):
+		return 1
+		
+	# 0 ^ N = 0
+	if(X == 0):
+		return 0
+		
+	# X ^ N = X * (X ^ (N - 1))
+	return X * pow(X, N - 1)
+
